@@ -214,3 +214,9 @@ main{
   border-left: 1px solid #bbb;
 }
 
+/* profile_update.php */
+
+#profile_items{
+  display: flex;
+  flex-direction: column;
+}

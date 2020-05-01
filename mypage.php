@@ -55,10 +55,12 @@
       <section id="profile">
         <div id="about_me">
           <ul id="about_me_items">
-            <li>Name</li>
+            <img src="user_images/rider.png" alt="">
+            <li>Name:<?= $_SESSION['loginUserName'] ?></li>
             <li>Birth</li>
             <li>Address</li>
           </ul>
+          <a href="profile_update.php" class="profile_update">update</a>
         
         </div>
         <div id="post_status">
