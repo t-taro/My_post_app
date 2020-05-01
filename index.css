@@ -1,0 +1,216 @@
+html,body{
+  height: 100%;
+}
+
+body{
+  margin: 0;
+  font-family: "Montserrat","游ゴシック",YuGothic,"ヒラギノ角ゴ ProN W3","Hiragino Kaku Gothic ProN","メイリオ",Meiryo,sans-serif;
+}
+
+.container{
+  width: 800px;
+  height: 100%;
+  margin: 0 auto;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+ul{
+  list-style: none;
+}
+
+p,label{
+  user-select: none;
+}
+
+.hidden{
+  display: none;
+}
+
+header{
+  background-color: rgb(6, 6, 112);
+  display: flex;
+  align-items: center;
+  color: aliceblue;
+}
+
+header h1{
+  margin: 0 12px;
+}
+
+/* index.php */
+
+main{
+  flex: 1;
+  position: relative;
+  padding: 12px;
+}
+
+#white-cover{
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  opacity: 0.5;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 10;
+}
+
+.login{
+  margin-bottom: 16px;
+}
+
+#go-to-signin{
+  border-radius: 4px;
+  /* border: 1px solid rgb(6, 6, 112); */
+  background-color: rgb(134, 62, 250);
+  width: fit-content;
+}
+
+#go-to-signin:hover{
+  opacity: 0.8;
+}
+
+#go-to-signin>a{
+  text-decoration: none;
+  color: #fff;
+  padding: 2px 12px;
+  display: block;
+}
+
+/* posts_list.php */
+#loggedin_nav{
+  margin-left: auto;
+}
+
+#loggedin_menus{
+  display: flex;
+}
+
+#loggedin_menus>li+li{
+  margin-left: 12px;
+}
+
+.loggedin_menu>a{
+  text-decoration: none;
+  color: #fff;
+}
+
+.loggedin_menu>a:hover{
+  text-decoration: underline;
+}
+
+#add_new_post{
+  position: relative;
+}
+
+#open_post_area{
+  margin-top: 0;
+  padding: 0 24px;
+  border-radius: 4px;
+  display: inline-block;
+  background-color: rgb(134, 62, 250);
+  cursor: pointer;
+  user-select: none;
+}
+
+#open_post_area:hover{
+  opacity: 0.8;
+}
+
+#post-area{
+  width: 400px;
+  padding: 12px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  z-index: 20;
+}
+
+#post-area>form{
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+#post-area>form i{
+  position: absolute;
+  top: 0;
+  right: 0;
+  cursor: pointer;
+  user-select: none;
+}
+
+#post-area input[type="submit"]{
+  margin-top: 16px;
+  background-color: rgb(248, 247, 191);
+  display: inline-block;
+}
+
+#posts_list>h1{
+  border-bottom: 1px solid #bbb;
+}
+
+#post_items{
+  list-style: none;
+}
+
+#post_items li+li{
+  border-top: 1px solid #ddd;
+}
+
+.post_item {
+  margin-bottom: 20px;
+}
+
+.post_item>h2{
+  margin: 0;
+  font-size: 18px;
+}
+
+.post_item>p{
+  margin: 0 0 0 12px;
+}
+
+.like {
+  display: flex;
+  align-items: center;
+}
+
+.post_item.like>p{
+  margin: 4px;
+}
+
+/* mypage.php */
+
+#about_me_items,
+#post_status_items{
+  padding: 0;
+}
+
+#post_status_items{
+  display: flex;
+  border-top: 1px solid #bbb;
+  border-bottom: 1px solid #bbb;
+}
+
+#post_status_items>li{
+  flex: 1;
+  text-align: center;
+}
+
+#post_status_items>li>h1{
+  font-size: 16px;
+  margin: 16px 0;
+}
+
+#post_status_items li+li{
+  border-left: 1px solid #bbb;
+}
+
