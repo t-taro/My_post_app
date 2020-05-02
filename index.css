@@ -220,3 +220,23 @@ main{
   display: flex;
   flex-direction: column;
 }
+
+/* #profile_image{
+  width: 160px;
+  height: 160px;
+  background-size: cover;
+  background-position: center;
+} */
+
+
+#profile_image_frame{
+  width: 160px;
+  height: 160px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+}
+
+#profile_image {
+  height: 100%;
+}

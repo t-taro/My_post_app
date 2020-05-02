@@ -1,5 +1,11 @@
 <?php
   session_start();
+  require_once(__DIR__."/get.php");
+  
+  // ログインしていない場合はログイン画面へ遷移する
+  if (!isset($_SESSION['email'])){
+    header('Location: /');
+  };
 ?>
 
 <!DOCTYPE html>
@@ -32,7 +38,33 @@
     
     <main>
       <section class="update_profile">
-        <img src="user_images/rider.png" alt="">
+        <?php
+          foreach($usersResult as $row){
+            if ($row['id'] == $_SESSION['loginUserId']){
+              if (!is_null($row['image'])){
+                $loginUserImage = $row['image'];
+              } else {
+                $loginUserImage = './user_images/default.png';
+              };
+              
+              if (!is_null($row['name'])){
+                $loginUserName = $row['name'];
+              };
+              
+              if (!is_null($row['birth'])){
+                $loginUserBirth = $row['birth'];
+              };
+              
+              if (!is_null($row['address'])){
+                $loginUserAddress = $row['address'];
+              };
+              
+            };
+          };
+        ?>
+        <div id="profile_image_frame">
+          <img src="<?= $loginUserImage ?>" id="profile_image">
+        </div>
         <form action="upload.php" method="post" enctype="multipart/form-data">
           <input type="file" name="userImage">
           <input type="submit" value="update">
@@ -40,11 +72,12 @@
         
         <form action="profile_modify.php" method="post" id="profile_items">
           <label for="userName">Name</label>
-          <input type="text" name="userName" value="<?= $_SESSION['loginUserName'] ?>">
+          <input type="text" name="userName" value="<?= $loginUserName ?>">
           <label for="userBirth">Birth</label>
-          <input type="text" name="userBirth" value="<?= $_SESSION['loginUserName'] ?>">
+          <input type="date" name="userBirth" value="<?= $loginUserBirth ?>">
           <label for="userAddress">Address</label>
-          <input type="text" name="userAddress" value="<?= $_SESSION['loginUserName'] ?>">
+          <input type="text" name="userAddress" value="<?= $loginUserAddress ?>">
+          <input type="submit" value="update">
         </form>
         
       </section>
