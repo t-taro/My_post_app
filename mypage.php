@@ -54,44 +54,44 @@
       
       <section id="profile">
         <div id="about_me">
-          <ul id="about_me_items">
-            <?php
-              foreach($usersResult as $row){
-                if ($row['id'] == $_SESSION['loginUserId']){
-                  if (!is_null($row['image'])){
-                    $loginUserImage = $row['image'];
-                  } else {
-                    $loginUserImage = './user_images/default.png';
-                  };
-                  
-                  if (!is_null($row['name'])){
-                    $loginUserName = $row['name'];
-                  };
-                  
-                  if (!is_null($row['birth'])){
-                    $sql = 'select date_format(birth, "%Y-%m-%d") as formatedBirth from users where id = ' . $_SESSION['loginUserId'];
-                    $stmt = $db->query($sql);
-                    $formatBirthResult = $stmt->fetch(PDO::FETCH_ASSOC);
-                    $loginUserBirth = $formatBirthResult['formatedBirth'];
-                  };
-                  
-                  if (!is_null($row['address'])){
-                    $loginUserAddress = $row['address'];
-                  };
-                  
+          <?php
+            foreach($usersResult as $row){
+              if ($row['id'] == $_SESSION['loginUserId']){
+                if (!is_null($row['image'])){
+                  $loginUserImage = $row['image'];
+                } else {
+                  $loginUserImage = './user_images/default.png';
                 };
+                
+                if (!is_null($row['name'])){
+                  $loginUserName = $row['name'];
+                };
+                
+                if (!is_null($row['birth'])){
+                  $sql = 'select date_format(birth, "%Y-%m-%d") as formatedBirth from users where id = ' . $_SESSION['loginUserId'];
+                  $stmt = $db->query($sql);
+                  $formatBirthResult = $stmt->fetch(PDO::FETCH_ASSOC);
+                  $loginUserBirth = $formatBirthResult['formatedBirth'];
+                };
+                
+                if (!is_null($row['address'])){
+                  $loginUserAddress = $row['address'];
+                };
+                
               };
-            ?>
-            <div id="profile_image_frame">
-              <img src="<?= $loginUserImage ?>" id="profile_image">
-            </div>
+            };
+          ?>
+          <div id="profile_image_frame">
+            <img src="<?= $loginUserImage ?>" id="profile_image">
+          </div>
+          <ul id="about_me_items">
             <li>Name:<?= $loginUserName ?></li>
             <li>Birth:<?= $loginUserBirth ?></li>
             <li>Address:<?= $loginUserAddress ?></li>
           </ul>
-          <a href="profile_update.php" class="profile_update">update</a>
-        
         </div>
+        <p class="update_btn"><a href="profile_update.php" class="profile_update">profile update</a></p>
+        
         <div id="post_status">
           <ul id="post_status_items"> 
             <li>

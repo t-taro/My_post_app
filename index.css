@@ -194,6 +194,37 @@ main{
   padding: 0;
 }
 
+#about_me{
+  display: flex;
+}
+
+#about_me_items{
+  margin: 0;
+  padding-left: 12px;
+}
+
+.update_btn{
+  min-width: 160px;
+  margin-top: 12px;
+  border-radius: 4px;
+  display: inline-block;
+  background-color: rgb(160, 160, 160);
+  cursor: pointer;
+  user-select: none;
+  text-align: center;
+}
+
+.update_btn:hover{
+  opacity: 0.8;
+}
+
+.update_btn>a{
+  padding: 0 12px;
+  text-decoration: none;
+  color: #fff;
+}
+
+
 #post_status_items{
   display: flex;
   border-top: 1px solid #bbb;
@@ -220,13 +251,6 @@ main{
   display: flex;
   flex-direction: column;
 }
-
-/* #profile_image{
-  width: 160px;
-  height: 160px;
-  background-size: cover;
-  background-position: center;
-} */
 
 
 #profile_image_frame{
